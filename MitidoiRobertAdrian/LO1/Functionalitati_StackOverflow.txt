@@ -1,0 +1,14 @@
+1. Impartirea intrebarilor pe diferite tag-uri pentru gasirea mai usoara a lor
+2. Posibilitatea de a lasa voturi raspunsurilor, astfel se poate gasii raspunsul cel mai bun pentru o problema
+3. Impartirea aplicatiei StackOverflow in 2 versiuni, 
+   ->"For developers" in care pot intra orice fel de utilizatori si sa caute diferite intrebari publice,
+   ->"For business" in care companiile pot sa discute lucruri legate de firma lor, sa gaseasca solutii totul fiind 
+       privat si neputand fii accesat decat de cei din firma
+4. Posibilitatea de gasire a unui job ( exista sectiunea Job)
+5. Posibilitatea de a gasii diferite companii din domeniul IT-ului (exista sectiunea Company)
+6. Posibilitatea de cautare a utilizatorilor, reusind astfel sa-l gasim pe cel mai priceput utilizator cu cele mai 
+ multe raspunsuri bune oferite si cu cea mai buna reputatie
+7. Posibilitatea de a castiga, ca utilizator, o reputatie in functie de raspunsurile bune pe care le ofera la diferite
+ intrebari
+8. Site-ul poate fii accesat si de catre utilizatori neinregistrati, dar nu pot pune sau raspunde la intrebari,
+ nu pot sa-si faca un profil sau sa castige o reputatie, nu pot edita o intrebare sau un raspuns
