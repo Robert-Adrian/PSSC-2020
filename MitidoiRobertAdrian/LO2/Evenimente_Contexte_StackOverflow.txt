@@ -1,0 +1,30 @@
+Evenimente:
+
+1. Crearea unei intrebari si editarea ei
+
+2. Aplicarea pentru un job
+
+3. Raspunsul pe care-l poti da la o intrebare
+
+4. Accesarea diferitelor tag-uri de la intrebari 
+
+5. Accesarea diferitelor tab-uri din meniul aplicatiei
+
+
+Contexte:
+
+1. Pozitionarea intrebarilor in anumite contexte (intrebarile sunt impartite pe tag-uri)
+
+2. Pozitionarea ofertelor de job-uri in diferite contexte (Exista mai multe categorii
+   de job-uri front-end, back-end,database admin)
+
+3. Impartirea aplicatiei StackOverflow in 2 versiuni ("For developers" si "For business")
+   ofera:
+   -> un context, in cazul versiunii "For business", in cadrul firmei din care faci
+      parte in care discutii problemele la nivel de firma
+   ->un context, in cazul versiunii "For developers", in care poti discuta cu toti utilizatorii
+      un anumit subiect
+
+4. Evaluarea intrebarii
+
+5. Reputatia obtinuta in cadrul unei intrebari dintr-un context
