@@ -1,8 +1,8 @@
-Bounded context: "Publish questions"
-	Workflow: "Create question"
-		Triggered by: "Ask Questions" event
-		Input: "Questions form" (Title, Body, Tags, Answer your own question)
-		Other inputs(dependencies -> "Review your question")
+<b>Bounded context:</b> "Publish questions"
+	<b>Workflow:</b> "Create question"
+		<b>Triggered by:</b> "Ask Questions" event
+		<b>Input:</b> "Questions form" (Title, Body, Tags, Answer your own question)
+		<b>Other inputs</b>(dependencies -> "Review your question")
 		Output: "Question published" event
 		Side effects: Question appear in your profile and makes more reputation
 
