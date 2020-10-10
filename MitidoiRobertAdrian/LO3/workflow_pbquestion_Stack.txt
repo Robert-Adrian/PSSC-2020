@@ -1,0 +1,34 @@
+Bounded context: "Publish questions"
+	Workflow: "Create question"
+		Triggered by: "Ask Questions" event
+		Input: "Questions form" (Title, Body, Tags, Answer your own question)
+		Other inputs(dependencies -> "Review your question")
+		Output: "Question published" event
+		Side effects: Question appear in your profile and makes more reputation
+
+Workflow documentation
+
+Workflow: "Create question"
+	Input: "Questions form"
+	Output: "Question published" event or invalid questions form
+
+//step1
+	Do validate question form
+	If form is invalid then
+		stop ("The question can be published")
+//step2
+	return "Question published" event
+
+
+
+Substep: "Validate question form"
+	Input: "Unvalidate question form"
+	Output: "Validate question form"
+	dependencies: Title validator, Body validator, Tags validator
+	
+Validate the title question
+Validate the body
+validate the tags
+If all validations passed then
+	return validate question form
+Else return Validation error
