@@ -27,7 +27,21 @@ namespace Test.App
 
             Console.ReadLine();
 
-           
+            if (result.form == true)
+            {
+                Console.WriteLine("Do you want to give a vote ?");
+                Console.WriteLine("Yes or No ? Y or N");
+                string decision = Console.ReadLine();
+                if (decision.Equals("Y"))
+                {
+                    Console.WriteLine("You can give a positive or negative vote: P or N ?");
+                    string vote = Console.ReadLine();
+                    if (vote.Equals("P"))
+                        result.getVotes(1);
+                    else if (vote.Equals("N"))
+                        result.getVotes(-1);
+                }
+            }
         }
 
         private static ICreateQuestionResult ProcessQuestionNotCreated(QuestionNotCreated questionNotCreatedResult)
@@ -60,13 +74,13 @@ namespace Test.App
                 return new QuestionValidationFailed(errors);
             }
 
-            if (createQuestionCommand.Title.Length < 8 && !string.IsNullOrWhiteSpace(createQuestionCommand.Title))
+            if (createQuestionCommand.Title.Length < 0 && !string.IsNullOrWhiteSpace(createQuestionCommand.Title))
             {
                 var errors = new List<string>() { "Title cannot be shorter than 8 characters." };
                 return new QuestionValidationFailed(errors);
             }
 
-            if (createQuestionCommand.Title.Length > 180)
+            if (createQuestionCommand.Title.Length > 1000)
             {
                 var errors = new List<string>() { "Title cannot be longer than 180 characters." };
                 return new QuestionValidationFailed(errors);
@@ -78,13 +92,13 @@ namespace Test.App
                 return new QuestionValidationFailed(errors);
             }
 
-            if (createQuestionCommand.Body.Length < 10 && !string.IsNullOrWhiteSpace(createQuestionCommand.Title))
+            if (createQuestionCommand.Body.Length < 0 && !string.IsNullOrWhiteSpace(createQuestionCommand.Title))
             {
                 var errors = new List<string>() { "Body cannot be shorter than 10 characters." };
                 return new QuestionValidationFailed(errors);
             }
 
-            if (createQuestionCommand.Body.Length > 10000)
+            if (createQuestionCommand.Body.Length > 1000)
             {
                 var errors = new List<string>() { "Body is limited to 10000 characters; you entered 10005." };
                 return new QuestionValidationFailed(errors);
@@ -96,7 +110,7 @@ namespace Test.App
                 return new QuestionValidationFailed(errors);
             }
 
-            if (createQuestionCommand.Tags.Length > 8)
+            if (createQuestionCommand.Tags.Length > 3)
             {
                 var errors = new List<string>() { "You entered to much tags, you need to delete some of these" };
                 return new QuestionValidationFailed(errors);

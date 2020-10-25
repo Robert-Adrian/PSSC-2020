@@ -13,16 +13,17 @@ namespace Question.Domain.CreateQuestionWorkflow
             bool form { get; set; }
 
             void Match(Func<QuestionCreated, ICreateQuestionResult> processQuestionCreated, Func<QuestionCreated.QuestionNotCreated, ICreateQuestionResult> processQuestionNotCreated, Func<QuestionCreated.QuestionValidationFailed, ICreateQuestionResult> processInvalidQuestion);
-          
+            void getVotes(int v);
         }
 
         public class QuestionCreated : ICreateQuestionResult
         {
-            public Guid QuestionId { get; set; }
-            public string User { get; set; }
-            public string Question { get; set; }
-            public bool form { get; set; }
-        
+            public Guid QuestionId { get; private set; }
+            public string User { get; private set; }
+            public string Question { get; private set; }
+            public bool form { get; private set; }
+            public int totalVotes { get; private set; } = 0;
+
             public QuestionCreated(Guid questionId, string question, string user, bool form)
             {
                 QuestionId = questionId;
@@ -31,7 +32,11 @@ namespace Question.Domain.CreateQuestionWorkflow
                 this.form = form;
             }
 
-     
+            public void getVotes(int vote)
+            {
+                totalVotes += vote;
+            }
+
             public class QuestionNotCreated : ICreateQuestionResult
             {
                 public string Feedback { get; set; }
@@ -47,7 +52,10 @@ namespace Question.Domain.CreateQuestionWorkflow
                     throw new NotImplementedException();
                 }
 
-
+                void ICreateQuestionResult.getVotes(int v)
+                {
+                    throw new NotImplementedException();
+                }
             }
 
             public class QuestionValidationFailed : ICreateQuestionResult
@@ -65,7 +73,10 @@ namespace Question.Domain.CreateQuestionWorkflow
                     throw new NotImplementedException();
                 }
 
-            
+                public void getVotes(int v)
+                {
+                    throw new NotImplementedException();
+                }
             }
 
 
