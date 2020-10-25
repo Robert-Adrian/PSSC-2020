@@ -26,7 +26,7 @@ namespace Question.Domain.CreateQuestionWorkflow
                 QuestionId = questionId;
                 Question = question;
                 User = user;
-                form = form;
+                this.form = form;
             }
 
 
